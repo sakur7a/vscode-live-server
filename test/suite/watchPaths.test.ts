@@ -43,7 +43,9 @@ suite('Watch paths', function () {
             client = undefined;
         }
         if (server) {
-            await liveServer.watcher.close();
+            if (liveServer.watcher) {
+                await liveServer.watcher.close();
+            }
             await new Promise<void>(resolve => server.close(() => resolve()));
             server = undefined;
         }

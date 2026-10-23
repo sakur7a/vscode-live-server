@@ -69,8 +69,8 @@ export class Config {
         return Config.getSettings<string[]>('ignoreFiles');
     }
 
-    public static get getWatchPaths(): string[] | null {
-        return Config.getSettings<string[] | null>('watchPaths');
+    public static get getWatchPaths(): string[] | null | undefined {
+        return Config.getSettings<string[] | null | undefined>('watchPaths');
     }
 
     public static get getDonotShowInfoMsg(): boolean {
